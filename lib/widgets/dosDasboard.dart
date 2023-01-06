@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/dosBimbingan.dart';
-import 'package:mobile/dosDrawer.dart';
-import 'package:mobile/dosJadwal.dart';
-import 'package:mobile/dosJurnal.dart';
-import 'package:mobile/dosProposal.dart';
-import 'package:mobile/dosTA.dart';
-import 'package:mobile/dosPermintaanDos.dart';
-import 'package:mobile/dosProfile.dart';
-import 'package:mobile/main.dart';
+import 'package:mobile/widgets/dosBimbingan.dart';
+import 'package:mobile/widgets/dosDrawer.dart';
+import 'package:mobile/widgets/dosJadwal.dart';
+import 'package:mobile/widgets/dosJurnal.dart';
+import 'package:mobile/widgets/dosProposal.dart';
+import 'package:mobile/widgets/dosTA.dart';
+import 'package:mobile/widgets/dosPermintaanDos.dart';
+import 'package:mobile/widgets/dosProfile.dart';
+import 'package:mobile/widgets/loginPage.dart';
 
 class dosDasboard extends StatelessWidget {
   const dosDasboard({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class dosDasboard extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const dosDrawer(),
+              // const dosDrawer(),
               ListTile(
                 leading: const Icon(Icons.lock_person),
                 title: Text("Profile"),
@@ -39,10 +39,7 @@ class dosDasboard extends StatelessWidget {
                 leading: const Icon(Icons.logout),
                 title: Text("Log Out"),
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HalamanUtama()));
+                  Navigator.pushNamed(context, '/login');
                 },
               ),
             ],

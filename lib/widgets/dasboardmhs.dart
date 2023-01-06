@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/headerDrawer.dart';
-import 'package:mobile/dosen_pembimbing.dart';
-import 'package:mobile/profile_mhs.dart';
-import 'package:mobile/judul_mhs.dart';
-import 'package:mobile/jadwal_mhs.dart';
-import 'package:mobile/ta_mhs.dart';
-import 'package:mobile/proposal_mhs.dart';
-import 'package:mobile/wisuda_mhs.dart';
-import 'package:mobile/yudisium_mhs.dart';
-import 'package:mobile/bimbingan_mhs.dart';
-import 'package:mobile/jurnal_mhs.dart';
-import 'package:mobile/main.dart';
-import 'package:mobile/contoh_upload_judul.dart';
+import 'package:mobile/providers/Store.dart';
+import 'package:mobile/widgets/headerDrawer.dart';
+import 'package:mobile/widgets/dosen_pembimbing.dart';
+import 'package:mobile/widgets/profile_mhs.dart';
+import 'package:mobile/widgets/judul_mhs.dart';
+import 'package:mobile/widgets/jadwal_mhs.dart';
+import 'package:mobile/widgets/ta_mhs.dart';
+import 'package:mobile/widgets/proposal_mhs.dart';
+import 'package:mobile/widgets/wisuda_mhs.dart';
+import 'package:mobile/widgets/yudisium_mhs.dart';
+import 'package:mobile/widgets/bimbingan_mhs.dart';
+import 'package:mobile/widgets/jurnal_mhs.dart';
+import 'package:mobile/widgets/loginPage.dart';
+import 'package:mobile/widgets/contoh_upload_judul.dart';
 
 class Dasboardmhs extends StatelessWidget {
   const Dasboardmhs({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class Dasboardmhs extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow[600],
-        title: Text('Dasboard Mahasiswa'),
+        title: Text('Dashboard Mahasiswa'),
         shadowColor: Colors.yellow[600],
       ),
       drawer: Drawer(
@@ -40,13 +41,11 @@ class Dasboardmhs extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.logout),
+                leading: Icon(Icons.logout),
                 title: Text("Log Out"),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HalamanUtama()));
+                onTap: () async {
+                  await Store().setString('data', '');
+                  Navigator.pushReplacementNamed(context, '/login');
                 },
               ),
             ],

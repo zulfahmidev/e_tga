@@ -22,9 +22,6 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
             height: 90.0,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('images/logo.png'),
-              ),
             ),
           ),
         ],

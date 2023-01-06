@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/bimbingan_ta_mhs.dart';
-import 'package:mobile/bimbingan_jurnal_mhs.dart';
-import 'package:mobile/bimbingan_mhs.dart';
-import 'package:mobile/bimbingan_jurnal_mhs.dart';
-import 'package:mobile/bimbingan_ta_mhs.dart';
-import 'package:mobile/bimbingan_proposal_mhs.dart';
+import 'package:mobile/widgets/bimbingan_ta_mhs.dart';
+import 'package:mobile/widgets/bimbingan_jurnal_mhs.dart';
+import 'package:mobile/widgets/bimbingan_mhs.dart';
+import 'package:mobile/widgets/bimbingan_jurnal_mhs.dart';
+import 'package:mobile/widgets/bimbingan_ta_mhs.dart';
+import 'package:mobile/widgets/bimbingan_proposal_mhs.dart';
 
 class bimbingan_mhs extends StatelessWidget {
   const bimbingan_mhs({Key? key}) : super(key: key);
